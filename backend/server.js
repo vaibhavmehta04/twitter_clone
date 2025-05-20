@@ -41,7 +41,7 @@ app.use('/api/posts', postRoutes);
 if(process.env.NODE_ENV === 'production') {
   app.use(express.static(Path.join(__dirname, '/frontend/dist')));
   app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
+    res.sendFile(Path.resolve(__dirname, 'frontend', 'dist', 'index.html'));
   })
 }
 
